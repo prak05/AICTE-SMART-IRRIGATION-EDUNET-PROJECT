@@ -1,131 +1,95 @@
-# AI-Image-Enhancement
+# Smart Irrigation System for Efficient Agriculture 💧
 
-## Intelligent Solutions for Image Quality Improvement
+This repository contains the code and resources for a **Smart Irrigation System** designed to optimize water usage in farming. The project leverages machine learning to predict the optimal sprinkler status for different farm parcels based on real-time sensor data, aiming to reduce water wastage and enhance agricultural efficiency.
 
-### Project Overview
-The **AI-Image-Enhancement** project provides a comprehensive suite of tools and algorithms for significantly improving image quality using cutting-edge Artificial Intelligence and Deep Learning techniques. This repository focuses on addressing common image degradation issues such as low resolution, noise, and lack of color, transforming visuals for diverse applications ranging from historical photo restoration to modern digital media.
+---
 
-### Key Features
+## 🚀 Project Overview
 
-* **Super-Resolution:** Utilizes deep learning models to upscale low-resolution images, synthesizing intricate details and textures to create high-resolution outputs.
-* **Image Denoising:** Employs advanced neural networks to effectively remove various types of noise (e.g., Gaussian, Salt-and-Pepper) while preserving essential image features.
-* **Image Colorization:** Leverages deep learning architectures to intelligently add realistic color to grayscale images, breathing new life into black-and-white photographs and videos.
-* **Modular Architecture:** Designed with a clear, modular structure to facilitate easy expansion with new enhancement techniques and model integrations.
-* **Configurable Parameters:** Allows users to adjust various parameters for each enhancement technique to fine-tune results based on specific image characteristics and desired outcomes.
+In an era of increasing water scarcity, efficient irrigation is paramount. This project addresses the challenge by building an intelligent system that automates irrigation decisions. It uses sensor data to predict when and where water is needed, moving beyond traditional, often wasteful, manual methods.
 
-### Technologies Used
+### Learning Objectives Achieved:
+* Gained practical experience in **data preprocessing** and **Exploratory Data Analysis (EDA)**.
+* Developed and trained a **multi-output classification model** using `scikit-learn`.
+* Understood model evaluation techniques for multi-label classification.
+* Deployed a machine learning model into an interactive web application using **Streamlit**.
 
-* **Programming Language:** Python 3.x
-* **Deep Learning Frameworks:**
-    * TensorFlow
-    * Keras
-    * PyTorch (if used)
-* **Core Libraries:**
-    * NumPy
-    * OpenCV (cv2)
-    * Pillow (PIL)
-    * Matplotlib (for visualization)
-* **Version Control:** Git & GitHub
+---
 
-### Getting Started
+## ✨ Features
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+* **Sensor Data Processing**: Handles and preprocesses sensor readings from a farm.
+* **Intelligent Prediction**: Predicts the ON/OFF status for three distinct farm parcels.
+* **Machine Learning Model**: Utilizes a `RandomForestClassifier` wrapped in a `MultiOutputClassifier` for robust predictions.
+* **Interactive Web Application**: A user-friendly Streamlit interface for real-time predictions based on user-input sensor values.
+* **Model Persistence**: Saves the trained model for easy deployment and reuse.
 
-#### Prerequisites
+---
 
-* Python 3.8+
-* `pip` (Python package installer)
-* [Optional: GPU with CUDA for faster training/inference, if applicable]
+## 📊 Dataset
 
-#### Installation
+The project uses the `irrigation_machine.csv` dataset, which contains:
+* `sensor_0` to `sensor_19`: 20 features representing various sensor readings.
+* `parcel_0`, `parcel_1`, `parcel_2`: Three target labels indicating the ON/OFF status (0 or 1) for each sprinkler parcel.
 
-1.  **Clone the repository:**
+---
+
+## 🛠️ Technologies Used
+
+* **Python 🐍**: The primary programming language.
+* **Pandas**: For data manipulation and analysis.
+* **NumPy**: For numerical operations.
+* **Scikit-learn**: For machine learning (model training, preprocessing, evaluation).
+* **Matplotlib & Seaborn**: For data visualization.
+* **Joblib**: For saving and loading Python objects (the trained model).
+* **Streamlit**: For creating the interactive web application.
+* **Google Colab**: Used for model training and `.pkl` file generation.
+* **Git & GitHub**: For version control and repository hosting.
+
+---
+
+## ⚙️ Setup and Local Execution
+
+Follow these steps to set up and run the Smart Irrigation System on your local machine:
+
+### Step 1: Google Colab - Train Model & Generate `.pkl`
+
+1.  **Open the Colab Notebook**: Go to [Smart_Irrigation_System_Notebook.ipynb](https://colab.research.google.com/github/RGS-AI/AICTE_Internships/blob/main/2025/July_2025/Smart_Irrigation/Irrigation_System%20(3).ipynb) (or upload your local `.ipynb` file to Colab).
+2.  **Upload `irrigation_machine.csv`**: In the Colab notebook, run the cell containing `from google.colab import files; uploaded = files.upload()`. Select and upload your `irrigation_machine.csv` file.
+3.  **Run All Cells**: Execute all cells in the Colab notebook sequentially. This will perform data preprocessing, model training, evaluation, and save the trained model as `Farm_Irrigation_System.pkl`.
+4.  **Download `Farm_Irrigation_System.pkl`**: After execution, download the `Farm_Irrigation_System.pkl` file from your Colab environment to your local machine.
+
+### Step 2: Local Machine - Set up Streamlit App
+
+1.  **Create Project Directory**: Ensure you have a dedicated folder for your project (e.g., `/home/prak05/Streamlit`).
+2.  **Place Files**: Put the downloaded `Farm_Irrigation_System.pkl` file and your `streamlit.py` (your Streamlit app code) file into this directory.
+3.  **Open Terminal**: Navigate to your project directory in the terminal:
     ```bash
-    git clone [https://github.com/](https://github.com/)[YourGitHubUsername]/AI-Image-Enhancement.git
+    cd /home/prak05/Streamlit
     ```
-2.  **Navigate into the project directory:**
+4.  **Create & Activate Virtual Environment**: (Highly Recommended for Kali Linux)
     ```bash
-    cd AI-Image-Enhancement
+    python3 -m venv myenv
+    source myenv/bin/activate
     ```
-3.  **Create and activate a virtual environment (recommended):**
+    Your terminal prompt should change to `(myenv)┌──(prak05㉿pecadosdeprak)-[~/Streamlit]`.
+5.  **Install Dependencies**: With the virtual environment activated, install all required Python packages:
     ```bash
-    python -m venv venv
-    # On Windows:
-    .\venv\Scripts\activate
-    # On macOS/Linux:
-    source venv/bin/activate
+    pip install streamlit numpy joblib scikit-learn
     ```
-4.  **Install the required dependencies:**
+6.  **Run Streamlit App**: Execute your Streamlit application:
     ```bash
-    pip install -r requirements.txt
+    streamlit run streamlit.py
     ```
-    (Ensure your `requirements.txt` file is up-to-date with all project dependencies)
+    This command will launch the Streamlit app in your default web browser (usually at `http://localhost:8501`).
 
-#### Usage / Running the Application
+---
 
-1.  **Prepare your data:**
-    * Place input images in the `data/input_images/` directory.
-    * [If your models require training, describe how to prepare training datasets, e.g., `data/training/high_res`, `data/training/low_res` etc.]
+## 📂 Repository Structure
 
-2.  **Running an image enhancement task:**
-
-    * **For Super-Resolution:**
-        ```bash
-        python main.py --mode super_resolution --input_image data/input_images/low_res_example.jpg --output_dir results/super_res --model_path models/sr_model.h5
-        ```
-    * **For Denoising:**
-        ```bash
-        python main.py --mode denoising --input_image data/input_images/noisy_example.png --output_dir results/denoise --model_path models/denoise_model.h5
-        ```
-    * **For Colorization:**
-        ```bash
-        python main.py --mode colorization --input_image data/input_images/grayscale_example.jpg --output_dir results/color --model_path models/color_model.h5
-        ```
-    * **[Add more detailed commands and explanations as per your `main.py` functionality. If you have different scripts for different modes, detail them.]**
-
-3.  **Viewing Results:**
-    * Enhanced images will be saved to the specified `output_dir`.
-
-4.  **Training Custom Models (if applicable):**
-    * [Provide commands and instructions for training new models or fine-tuning existing ones. E.g., `python train.py --model_type super_resolution --epochs 50 --batch_size 32`]
-
-### Project Structure (Example)
-
-AI-Image-Enhancement/
-├── main.py                   # Main script to run enhancement tasks
-├── models/                   # Directory for trained AI models (.h5, .pth)
-│   ├── sr_model.h5
-│   ├── denoise_model.h5
-│   └── color_model.h5
-├── data/                     # Directory for input/output and possibly training data
-│   ├── input_images/
-│   ├── output_images/
-│   └── (optional) training_data/
-│       ├── high_resolution/
-│       └── low_resolution/
-├── utils/                    # Utility functions (e.g., image loading, processing)
-│   ├── image_utils.py
-│   └── model_loader.py
-├── modules/                  # Specific modules for each enhancement type
-│   ├── super_resolution.py
-│   ├── denoising.py
-│   └── colorization.py
-├── notebooks/                # (Optional) Jupyter notebooks for experimentation/demonstration
-│   ├── model_training_exploration.ipynb
-│   └── image_analysis_demo.ipynb
-├── requirements.txt          # Python dependencies
-├── README.md                 # Project description and instructions
-└── LICENSE                   # Project license
-
-
-### Contributing
-Contributions are highly welcome! If you have suggestions for improvements, new enhancement techniques, or bug fixes, please follow these steps:
-
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
-
-### License
-Distributed under the MIT License. See `LICENSE` for more information.
+.
+├── Farm_Irrigation_System.pkl  # Trained machine learning model
+├── irrigation_machine.csv      # Dataset used for training
+├── Irrigation_System (3).ipynb # Google Colab Notebook (model training & evaluation)
+├── streamlit.py                # Streamlit web application code
+└── README.md                   # This README file
