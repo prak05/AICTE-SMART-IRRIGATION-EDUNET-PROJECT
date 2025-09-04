@@ -7,7 +7,6 @@
 
 A feature-rich, machine learning-powered web application designed to optimize agricultural water usage. This dashboard provides farmers with AI-driven recommendations, full manual control, and real-time environmental data to make intelligent irrigation decisions.
 
-**Live Application URL:** [https://prajnariego.streamlit.app/](https://prajnariego.streamlit.app/) *(Replace with your actual deployed URL)*
 
 ---
 
