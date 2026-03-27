@@ -1,0 +1,33 @@
+{
+  "name": "aicte-smart-irrigation",
+  "version": "2.0.0",
+  "description": "AICTE Smart Irrigation System - Government of India Official Weather Monitoring & Irrigation Control",
+  "main": "api/index.py",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "deploy": "vercel --prod",
+    "streamlit": "streamlit run src/streamlit_app.py"
+  },
+  "keywords": [
+    "agriculture",
+    "irrigation",
+    "weather",
+    "aicte",
+    "government",
+    "smart-farming",
+    "python",
+    "streamlit"
+  ],
+  "author": "AICTE - Government of India",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/node": "^3.0.0"
+  },
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

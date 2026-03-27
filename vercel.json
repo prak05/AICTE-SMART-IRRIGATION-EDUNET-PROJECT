@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "name": "aicte-smart-irrigation",
+  "builds": [
+    {
+      "src": "src/streamlit_app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/streamlit_app.py"
+    }
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.9"
+  },
+  "functions": {
+    "src/streamlit_app.py": {
+      "runtime": "python3.9"
+    }
+  },
+  "installCommand": "pip install -r requirements.txt",
+  "buildCommand": "echo 'Build complete'",
+  "framework": null,
+  "outputDirectory": ""
+}

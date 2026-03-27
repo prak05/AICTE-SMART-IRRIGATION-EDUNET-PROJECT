@@ -1,0 +1,392 @@
+/* 
+AICTE Sarkaari Portal Theme - Official Government of India Aesthetics
+Designed with maximum bureaucratic efficiency and minimum user experience
+*/
+
+/* === GOVERNMENT MANDATED COLORS === */
+:root {
+    --govt-saffron: #FF9933;
+    --govt-white: #FFFFFF;
+    --govt-green: #138808;
+    --govt-blue: #0066B2;
+    --govt-dark-blue: #004080;
+    --govt-gray: #6C757D;
+    --govt-light-gray: #F8F9FA;
+    --govt-border: #DEE2E6;
+    --govt-warning: #FFC107;
+    --govt-danger: #DC3545;
+    --govt-success: #28A745;
+    --govt-info: #17A2B8;
+}
+
+/* === BUREAUCRATIC TYPOGRAPHY === */
+@import url('https://fonts.googleapis.com/css2?family=Karma:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif !important;
+    background-color: var(--govt-light-gray) !important;
+    color: #333 !important;
+    line-height: 1.6 !important;
+}
+
+.govt-header {
+    font-family: 'Karma', serif !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* === OFFICIAL GOVERNMENT HEADER === */
+.govt-emblem {
+    background: linear-gradient(135deg, var(--govt-saffron) 0%, var(--govt-white) 33%, var(--govt-green) 66%, var(--govt-white) 100%);
+    border-bottom: 4px solid var(--govt-dark-blue);
+    padding: 20px 0 !important;
+    text-align: center !important;
+    position: relative !important;
+}
+
+.govt-emblem::before {
+    content: "🇮🇳";
+    font-size: 48px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.govt-emblem::after {
+    content: "सत्यमेव जयते";
+    font-family: 'Karma', serif;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--govt-dark-blue);
+    font-weight: 600;
+}
+
+/* === SARKAARI NAVIGATION === */
+.govt-navbar {
+    background-color: var(--govt-dark-blue) !important;
+    border-bottom: 2px solid var(--govt-saffron) !important;
+    padding: 0 !important;
+}
+
+.govt-navbar .stSelectbox > div > div {
+    background-color: var(--govt-white) !important;
+    border: 1px solid var(--govt-border) !important;
+    border-radius: 0 !important;
+}
+
+.govt-sidebar {
+    background-color: var(--govt-light-gray) !important;
+    border-right: 3px solid var(--govt-blue) !important;
+    padding: 20px !important;
+}
+
+.govt-sidebar .css-1d391kg {
+    background-color: var(--govt-white) !important;
+    border: 1px solid var(--govt-border) !important;
+    border-left: 4px solid var(--govt-blue) !important;
+}
+
+/* === OFFICIAL FORM ELEMENTS === */
+.govt-input, .govt-selectbox, .govt-slider {
+    border: 2px solid var(--govt-border) !important;
+    border-radius: 0 !important;
+    background-color: var(--govt-white) !important;
+    transition: all 0.3s ease !important;
+}
+
+.govt-input:focus, .govt-selectbox:focus, .govt-slider:focus {
+    border-color: var(--govt-blue) !important;
+    box-shadow: 0 0 0 2px rgba(0, 102, 178, 0.2) !important;
+}
+
+/* === BUREAUCRATIC BUTTONS === */
+.govt-button-primary {
+    background-color: var(--govt-blue) !important;
+    color: var(--govt-white) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 12px 24px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.govt-button-primary:hover {
+    background-color: var(--govt-dark-blue) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.govt-button-success {
+    background-color: var(--govt-success) !important;
+    color: var(--govt-white) !important;
+}
+
+.govt-button-warning {
+    background-color: var(--govt-warning) !important;
+    color: #333 !important;
+}
+
+.govt-button-danger {
+    background-color: var(--govt-danger) !important;
+    color: var(--govt-white) !important;
+}
+
+/* === OFFICIAL CARDS AND PANELS === */
+.govt-card {
+    background-color: var(--govt-white) !important;
+    border: 1px solid var(--govt-border) !important;
+    border-left: 5px solid var(--govt-blue) !important;
+    border-radius: 0 !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.govt-card-header {
+    background-color: var(--govt-blue) !important;
+    color: var(--govt-white) !important;
+    padding: 15px 20px !important;
+    margin: -20px -20px 20px -20px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* === METRIC DISPLAYS === */
+.govt-metric {
+    background-color: var(--govt-white) !important;
+    border: 2px solid var(--govt-border) !important;
+    border-radius: 0 !important;
+    padding: 20px !important;
+    text-align: center !important;
+    position: relative !important;
+}
+
+.govt-metric::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--govt-saffron), var(--govt-white), var(--govt-green));
+}
+
+.govt-metric-value {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: var(--govt-blue) !important;
+}
+
+.govt-metric-label {
+    font-size: 0.9rem !important;
+    color: var(--govt-gray) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* === ALERTS AND NOTIFICATIONS === */
+.govt-alert-info {
+    background-color: #D1ECF1 !important;
+    border: 2px solid #BEE5EB !important;
+    border-left: 5px solid var(--govt-info) !important;
+    color: #0C5460 !important;
+    padding: 15px 20px !important;
+    border-radius: 0 !important;
+}
+
+.govt-alert-warning {
+    background-color: #FFF3CD !important;
+    border: 2px solid #FFEAA7 !important;
+    border-left: 5px solid var(--govt-warning) !important;
+    color: #856404 !important;
+}
+
+.govt-alert-success {
+    background-color: #D4EDDA !important;
+    border: 2px solid #C3E6CB !important;
+    border-left: 5px solid var(--govt-success) !important;
+    color: #155724 !important;
+}
+
+.govt-alert-danger {
+    background-color: #F8D7DA !important;
+    border: 2px solid #F5C6CB !important;
+    border-left: 5px solid var(--govt-danger) !important;
+    color: #721C24 !important;
+}
+
+/* === TABLES === */
+.govt-table {
+    background-color: var(--govt-white) !important;
+    border: 1px solid var(--govt-border) !important;
+    border-collapse: collapse !important;
+}
+
+.govt-table th {
+    background-color: var(--govt-blue) !important;
+    color: var(--govt-white) !important;
+    padding: 12px !important;
+    text-align: left !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.govt-table td {
+    padding: 12px !important;
+    border-bottom: 1px solid var(--govt-border) !important;
+}
+
+.govt-table tr:nth-child(even) {
+    background-color: var(--govt-light-gray) !important;
+}
+
+/* === TABS === */
+.govt-tabs {
+    border-bottom: 3px solid var(--govt-blue) !important;
+    margin-bottom: 20px !important;
+}
+
+.govt-tab {
+    background-color: var(--govt-light-gray) !important;
+    border: 1px solid var(--govt-border) !important;
+    border-bottom: none !important;
+    border-radius: 4px 4px 0 0 !important;
+    padding: 12px 24px !important;
+    margin-right: 2px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.govt-tab[data-baseweb="tab"][aria-selected="true"] {
+    background-color: var(--govt-blue) !important;
+    color: var(--govt-white) !important;
+}
+
+/* === SLIDERS AND CONTROLS === */
+.govt-slider .stSlider {
+    background-color: var(--govt-light-gray) !important;
+}
+
+.govt-slider .stSlider [data-baseweb="slider"] {
+    background-color: var(--govt-blue) !important;
+}
+
+.govt-slider .stSlider [data-baseweb="slider-handle"] {
+    background-color: var(--govt-saffron) !important;
+    border: 2px solid var(--govt-blue) !important;
+}
+
+/* === TOGGLES AND SWITCHES === */
+.govt-toggle .stSwitch {
+    background-color: var(--govt-gray) !important;
+}
+
+.govt-toggle .stSwitch[aria-checked="true"] {
+    background-color: var(--govt-success) !important;
+}
+
+/* === FOOTER === */
+.govt-footer {
+    background-color: var(--govt-dark-blue) !important;
+    color: var(--govt-white) !important;
+    text-align: center !important;
+    padding: 20px !important;
+    border-top: 4px solid var(--govt-saffron) !important;
+    margin-top: 40px !important;
+}
+
+.govt-footer::before {
+    content: "This website is certified by the Government of India and meets all official standards";
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* === LOADING AND SPINNERS === */
+.govt-loading {
+    border: 4px solid var(--govt-light-gray) !important;
+    border-top: 4px solid var(--govt-saffron) !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    animation: govt-spin 1s linear infinite !important;
+}
+
+@keyframes govt-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* === BUREAUCRATIC HOVER EFFECTS === */
+.govt-hover-lift {
+    transition: all 0.3s ease !important;
+}
+
+.govt-hover-lift:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* === OFFICIAL STAMPS AND SEALS === */
+.govt-stamp {
+    position: relative !important;
+}
+
+.govt-stamp::after {
+    content: "OFFICIALLY APPROVED";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    color: var(--govt-danger);
+    font-size: 1.2rem;
+    font-weight: 700;
+    opacity: 0.7;
+    border: 3px solid var(--govt-danger);
+    padding: 10px 20px;
+    border-radius: 50%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* === RESPONSIVE DESIGN FOR GOVERNMENT TABLETS === */
+@media (max-width: 768px) {
+    .govt-emblem::before,
+    .govt-emblem::after {
+        display: none !important;
+    }
+    
+    .govt-metric-value {
+        font-size: 1.5rem !important;
+    }
+    
+    .govt-card {
+        padding: 15px !important;
+    }
+}
+
+/* === PRINT STYLES FOR OFFICIAL RECORDS === */
+@media print {
+    .govt-emblem {
+        background: none !important;
+        color: black !important;
+    }
+    
+    .govt-sidebar {
+        display: none !important;
+    }
+    
+    .govt-button {
+        display: none !important;
+    }
+}
